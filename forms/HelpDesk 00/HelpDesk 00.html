@@ -5,11 +5,11 @@
 	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
 </head>
 <body>
 <div class="fluig-style-guide">
 <form name="form" role="form">
-
 
 <!--cabeçalho-->
 
@@ -22,10 +22,6 @@
 			</div>
 		</div>
 	</div>
-
-<!-- aviso -->
-
-	<div class="paragraph-is-required system-message-information alert alert-warning" role="alert">Todos os campos com * são de preenchimento obrigatório.</div>
 
 <!-- requisitante -->
 
@@ -40,11 +36,18 @@
 				<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
 			</div>
 			
-			
 				<div class="form-group col-md-2">
-					<label for="ramal">Ramal </label>
-					<input type="number" name="ramal" id="ramal" class="form-control">
+					<label for="ramal">Ramal</label>
+						<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" id="ramal" maxlength="4" />
 				</div>
+				
+				<div class="form-group fs-cursor-pointer quan" id="maquina">
+					<div class="input-group date">
+					<label for="maquina">Número da Maquina (AMWKS)</label>
+						<input type="text" placeholder="00000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="maquina" id="maquina" maxlength="5" />
+					</div>
+				</div>
+			
 			</div>
 		</div>
 	</div>
@@ -87,11 +90,7 @@
 								<textarea class="form-control" name="obs" rows="4" cols="20"></textarea>
 							</div>
 						</div>
+				</div>			
 				</div>
 		</div>
 	</div>
-
-</form>
-</div>
-</body>
-</html>

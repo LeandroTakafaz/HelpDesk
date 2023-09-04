@@ -1,5 +1,5 @@
 function displayFields(form,customHTML){
 	
-	var codigoSolicitante = getValue("WKUser");
-	form.setValue("nome", codigoSolicitante);
+	var usuario = getValue("WKUser");
+	form.setValue("nome", usuario);
 }
