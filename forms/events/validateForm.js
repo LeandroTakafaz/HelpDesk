@@ -4,16 +4,13 @@ function validateForm(form){
 		throw "Campo Ramal não foi preenchido.";
 	}
 	if(form.getValue("obs") == "") {
-		throw "Campo Ramal não foi preenchido.";
+		throw "Campo Descrição não foi preenchido.";
 	}
 	if(form.getValue("txt_categoria") == "") {
-		throw "Campo Ramal não foi preenchido.";
+		throw "Campo Categoria não foi preenchido.";
 	}
 	if(form.getValue("maquina") == "") {
-		throw "Campo Ramal não foi preenchido.";
+		throw "Campo Número da Máquina não foi preenchido.";
 	}
-	if(form.getValue("ramal") == "") {
-		throw "Campo Ramal não foi preenchido.";
-	}
-	
+
 }
