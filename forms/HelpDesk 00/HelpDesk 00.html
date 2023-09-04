@@ -23,48 +23,27 @@
 		</div>
 	</div>
 
-<!-- descricao-->
+<!-- requisitante -->
 
-<div class="panel panel-primary">
+<div class="panel panel-primary" id="painel_Req">
 	<div class="panel-heading">
-		<h3 class="panel-title"><i class="flaticon flaticon-form-list icon-sm" aria-hidden="true"></i>
-		 Descrição</h3>
+		<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Demandante</h3>
 	</div>
 	<div class="panel-body">
-		<div class="form-group">
-			<div class="row">
-				<div class="col-md-2">
-						<div class="form-input">
-							<div class="form-group">
-								<label>Categoria</label>
-									<span class="required text-danger">
-									<strong>*</strong>
-									</span>
-										<select class="form-control" name="txt_categoria" id="txt_categoria";>
-											<option value="0"></option>
-											<option value="1">Suporte Geral</option>
-											<option value="2">Desenvolvimento</option>
-											<option value="3">RM</option>
-											<option value="4">Processos</option>
-										</select>
-							</div>
-						</div>
-				</div>
-			</div>	
-			<div class="row">
-					<div class="col-md-2">
-						<div class="form-group" id="obs">
-							<label for="requisitante">Descrição</label>
-							<span class="required text-danger">
-							<strong>*</strong>
-							</span>
-							<textarea class="form-control" name="obs" rows="4" cols="20"></textarea>
-						</div>
-					</div>
-			</div>			
+		<div class="row">
+		<div class="form-group col-md-2">
+				<label for="name">Nome</label>
+				<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
 			</div>
+			
+			
+				<div class="form-group col-md-2">
+					<label for="ramal">Ramal Mais Próximo </label>
+					<input type="number" name="ramal" id="ramal" class="form-control">
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
 
 <!-- descricão-->
 
