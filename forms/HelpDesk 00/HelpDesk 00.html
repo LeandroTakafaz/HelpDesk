@@ -23,35 +23,35 @@
 		</div>
 	</div>
 
-	<!-- aviso -->
+<!-- aviso -->
 
-	<div class="paragraph-is-required system-message-information alert alert-warning" role="alert">Todos os campos com * são de preenchimento obrigatório.</div>
+<div class="paragraph-is-required system-message-information alert alert-warning" role="alert">Todos os campos com * são de preenchimento obrigatório.</div>
 
 <!-- Painel do Requisitante -->
 
-<div class="panel panel-primary" id="painel_Req">
-	<div class="panel-heading">
-		<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Requisitante</h3>
-	</div>
-	<div class="panel-body">
-		<div class="row">
-		<div class="form-group col-md-2">
-				<label for="name">Nome</label>
-				<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
-			</div>
-			
+	<div class="panel panel-primary" id="painel_Req">
+		<div class="panel-heading">
+			<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Requisitante</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
 				<div class="form-group col-md-2">
-					<label for="ramal">Ramal</label>
-						<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" id="ramal" maxlength="4" />
+					<label for="name">Nome</label>
+					<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
 				</div>
 				
-				<div class="form-group fs-cursor-pointer quan" id="maquina">
-					<div class="input-group date">
-					<label for="maquina">Número da Maquina (AMWKS)</label>
-						<input type="text" placeholder="00000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="maquina" id="maquina" maxlength="5" />
+					<div class="form-group col-md-2">
+						<label for="ramal">Ramal</label>
+							<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" id="ramal" maxlength="4" />
 					</div>
-				</div>
-			
+					
+					<div class="form-group fs-cursor-pointer quan" id="maquina">
+						<div class="input-group date">
+						<label for="maquina">Número da Maquina (AMWKS)</label>
+							<input type="text" placeholder="00000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="maquina" id="maquina" maxlength="5" />
+						</div>
+					</div>
+				
 			</div>
 		</div>
 	</div>
@@ -65,6 +65,25 @@
 		</div>
 		<div class="panel-body">
 			<div class="form-group">
+			
+				<div class="row">
+					<div class="col-md-2">
+							<div class="form-input">
+								<div class="form-group">
+									<label>Tipo</label>
+										<span class="required text-danger">
+										<strong>*</strong>
+										</span>
+											<select class="form-control" name="tipo" id="tipo";>
+												<option value="0"></option>
+												<option value="1">Incidente</option>
+												<option value="2">Requisição</option>
+											</select>
+								</div>
+							</div>
+					</div>
+				</div>
+				
 				<div class="row">
 					<div class="col-md-2">
 							<div class="form-input">
@@ -84,10 +103,23 @@
 							</div>
 					</div>
 				</div>	
+				
+				<div class="row">
+						<div class="col-md-2">
+							<div class="form-group" id="titulo">
+								<label for="titulo">Título</label>
+								<span class="required text-danger">
+								<strong>*</strong>
+								</span>
+								<textarea class="form-control" name="tit" rows="1" cols="10"></textarea>
+							</div>
+						</div>
+				</div>	
+							
 				<div class="row">
 						<div class="col-md-2">
 							<div class="form-group" id="obs">
-								<label for="requisitante">Descrição</label>
+								<label for="descricao">Descrição</label>
 								<span class="required text-danger">
 								<strong>*</strong>
 								</span>
@@ -95,9 +127,13 @@
 							</div>
 						</div>
 				</div>			
-				</div>
+			</div>
 		</div>
 	</div>
+
+
+<!-- resposta do suporte -->
+
 
 </form>
 </div>
