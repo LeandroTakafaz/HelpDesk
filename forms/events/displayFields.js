@@ -1,5 +1,11 @@
-function displayFields(form,customHTML){
-	
+function displayFields(form, customHTML) {
+	var Now_State = parseInt(getValue("WKNumState"));
 	var usuario = getValue("WKUser");
-	form.setValue("nome", usuario);
-}
+	form.setValue("name", usuario);
+
+	//	---Abrir Chamado || Atender Chamdo---
+
+	if (Now_State == 0 || Now_State == 9) {
+		form.setVisibleById("info", false);
+	}
+}	

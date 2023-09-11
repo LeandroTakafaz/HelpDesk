@@ -37,17 +37,23 @@
 			<div class="row">
 				<div class="form-group col-md-2">
 					<label for="name">Nome</label>
-					<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
+						<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
 				</div>
 				
 					<div class="form-group col-md-2">
 						<label for="ramal">Ramal</label>
+							<span class="required text-danger">
+								<strong>*</strong>
+							</span>
 							<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" id="ramal" maxlength="4" />
 					</div>
 					
 					<div class="form-group fs-cursor-pointer quan" id="maquina">
 						<div class="input-group date">
 						<label for="maquina">Número da Maquina (AMWKS)</label>
+							<span class="required text-danger">
+								<strong>*</strong>
+							</span>	
 							<input type="text" placeholder="00000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="maquina" id="maquina" maxlength="5" />
 						</div>
 					</div>
@@ -74,7 +80,7 @@
 										<span class="required text-danger">
 										<strong>*</strong>
 										</span>
-											<select class="form-control" name="tipo" id="tipo";>
+											<select class="form-control" name="tipo" id="tipo">
 												<option value="0"></option>
 												<option value="1">Incidente</option>
 												<option value="2">Requisição</option>
@@ -92,7 +98,7 @@
 										<span class="required text-danger">
 										<strong>*</strong>
 										</span>
-											<select class="form-control" name="txt_categoria" id="txt_categoria";>
+											<select class="form-control" name="txt_categoria" id="txt_categoria">
 												<option value="0"></option>
 												<option value="1">Suporte Geral</option>
 												<option value="2">Desenvolvimento</option>
@@ -125,6 +131,18 @@
 								</span>
 								<textarea class="form-control" name="obs" rows="4" cols="20"></textarea>
 							</div>
+							
+							<div class="form-input">
+								<div class="form-group"  id="info">
+									<label>Informações Suficientes?</label>
+										<span class="required text-danger">
+										<strong>*</strong>
+										</span>
+											<select class="form-control" name="info">
+												<option value="0">Sim</option>
+												<option value="1">Não</option>
+											</select>
+								</div>
 						</div>
 				</div>			
 			</div>
@@ -138,3 +156,4 @@
 </form>
 </div>
 </body>
+</html>
