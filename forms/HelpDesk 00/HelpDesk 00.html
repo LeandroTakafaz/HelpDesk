@@ -12,11 +12,32 @@
 <form name="form" role="form">
 
 <!--progress bar-->
-<div class="progress">
+<div class="progress" id="p1">
     <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
         <span></span>
     </div>
 </div>
+<div class="progress" id="p25">
+    <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+        <span></span>
+    </div>
+</div>
+<div class="progress" id="p50">
+    <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+        <span></span>
+    </div>
+</div>
+<div class="progress" id="p75">
+    <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+        <span></span>
+    </div>
+</div>
+<div class="progress" id="p100">
+    <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+        <span></span>
+    </div>
+</div>
+
 
 <!--cabeçalho-->
 
@@ -131,12 +152,12 @@
 							
 				<div class="row">
 						<div class="col-md-2">
-							<div class="form-group" id="obs">
+							<div class="form-group" id="descricao">
 								<label for="descricao">Descrição</label>
 								<span class="required text-danger">
 								<strong>*</strong>
 								</span>
-								<textarea class="form-control" name="obs" rows="4" cols="20"></textarea>
+								<textarea class="form-control" name="descricao" rows="4" cols="20"></textarea>
 							</div>
 							
 							<div class="form-input">
@@ -160,7 +181,7 @@
 <!-- avaliação do serviço -->
 
 
-<div class="panel panel-primary">
+<div class="panel panel-primary" id="painel_sup">
 	<div class="panel-heading">
 		<h3 class="panel-title">Avalie o suporte</h3>
 	</div>
@@ -185,6 +206,9 @@
 		<div class="row">
 		<div class="col-md-2">
 			<div class="form-group" id="obs">
+			<span class="required text-danger">
+				<strong>*</strong>
+				</span>
 				<label for="requisitante">Observações</label>
 				<textarea class="form-control" name="obs" rows="3" cols="20"></textarea>
 			</div>

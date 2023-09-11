@@ -3,7 +3,7 @@ function validateForm(form){
 	if(form.getValue("ramal") == "") {
 		throw "Campo Ramal não foi preenchido.";
 	}
-	if(form.getValue("obs") == "") {
+	if(form.getValue("descricao") == "") {
 		throw "Campo Descrição não foi preenchido.";
 	}
 	if(form.getValue("txt_categoria") == "") {
