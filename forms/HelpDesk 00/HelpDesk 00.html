@@ -38,7 +38,6 @@
     </div>
 </div>
 
-
 <!--cabeçalho-->
 
 	<div class="row">
@@ -221,11 +220,18 @@
 </div>
 </body>
 
-<script type="text/javascript">
-	var calendariodataAval = FLUIGC.calendar('#dataAval', {
-		pickDate: false,
-		useCurrent: true,
-	});	
-</script>
+	<script src="custom.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide-ratingstars.min.css">
+	<script src="/style-guide/js/fluig-style-guide-ratingstars.min.js">
+		var avaliacao = FLUIGC.stars("avaliacao");
+	</script>
+
+	<script type="text/javascript">
+		var calendariodataAval = FLUIGC.calendar('#dataAval', {
+			pickDate: false,
+			useCurrent: true,
+		});	
+	</script>
 
 </html>
