@@ -11,6 +11,13 @@
 <div class="fluig-style-guide">
 <form name="form" role="form">
 
+<!--progress bar-->
+<div class="progress">
+    <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
+        <span></span>
+    </div>
+</div>
+
 <!--cabeçalho-->
 
 	<div class="row">
@@ -150,10 +157,51 @@
 	</div>
 
 
-<!-- resposta do suporte -->
+<!-- avaliação do serviço -->
 
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Avalie o suporte</h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="form-group col-md-2">
+					<div class="fluig-style-guide">
+						<div id="avaliacao">
+							<input type="hidden" id="avaliacao" name="avaliacao">
+							<div id="avaliacao_stars"></div>
+						</div>
+					</div>
+			</div>	    
+		</div>
+		<div class="row">	
+			<div class="form-group col-md-2" id="dataAval">
+				<label for="dataAval"><i class="fluigicon fluigicon-calendar icon-xs" aria-hidden="true"></i>
+				Data da avaliação</label>
+					<input type="text" name="dataAval" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-md-2">
+			<div class="form-group" id="obs">
+				<label for="requisitante">Observações</label>
+				<textarea class="form-control" name="obs" rows="3" cols="20"></textarea>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
 
 </form>
 </div>
 </body>
+
+<script type="text/javascript">
+	var calendariodataAval = FLUIGC.calendar('#dataAval', {
+		pickDate: false,
+		useCurrent: true,
+	});	
+</script>
+
 </html>
