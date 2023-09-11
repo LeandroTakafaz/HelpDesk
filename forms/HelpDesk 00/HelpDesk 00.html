@@ -29,23 +29,23 @@
 
 <!-- Painel do Requisitante -->
 
-	<div class="panel panel-primary" id="painel_Req">
+	<div class="panel panel-primary" id="painel_req">
 		<div class="panel-heading">
 			<h3 class="panel-title"><i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>Requisitante</h3>
 		</div>
 		<div class="panel-body">
 			<div class="row">
-				<div class="form-group col-md-2">
+				<div class="form-group col-md-2" id="name">
 					<label for="name">Nome</label>
-						<select name="name" id="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
+						<select name="name" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
 				</div>
 				
-					<div class="form-group col-md-2">
+					<div class="form-group col-md-2" id="ramal">
 						<label for="ramal">Ramal</label>
 							<span class="required text-danger">
 								<strong>*</strong>
 							</span>
-							<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" id="ramal" maxlength="4" />
+							<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" maxlength="4" />
 					</div>
 					
 					<div class="form-group fs-cursor-pointer quan" id="maquina">
@@ -62,9 +62,9 @@
 		</div>
 	</div>
 
-<!-- descricão-->
+<!-- Painel de Descrição -->
 
-	<div class="panel panel-primary">
+	<div class="panel panel-primary" id="paineldesc">
 		<div class="panel-heading">
 			<h3 class="panel-title"><i class="flaticon flaticon-form-list icon-sm" aria-hidden="true"></i>
 			Descrição</h3>
@@ -73,14 +73,14 @@
 			<div class="form-group">
 			
 				<div class="row">
-					<div class="col-md-2">
+					<div class="col-md-2" id="tipo>
 							<div class="form-input">
 								<div class="form-group">
 									<label>Tipo</label>
 										<span class="required text-danger">
 										<strong>*</strong>
 										</span>
-											<select class="form-control" name="tipo" id="tipo">
+											<select class="form-control" name="tipo"">
 												<option value="0"></option>
 												<option value="1">Incidente</option>
 												<option value="2">Requisição</option>
@@ -93,12 +93,12 @@
 				<div class="row">
 					<div class="col-md-2">
 							<div class="form-input">
-								<div class="form-group">
+								<div class="form-group" id="txt_categoria">
 									<label>Categoria</label>
 										<span class="required text-danger">
 										<strong>*</strong>
 										</span>
-											<select class="form-control" name="txt_categoria" id="txt_categoria">
+											<select class="form-control" name="txt_categoria">
 												<option value="0"></option>
 												<option value="1">Suporte Geral</option>
 												<option value="2">Desenvolvimento</option>

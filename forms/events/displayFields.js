@@ -8,4 +8,9 @@ function displayFields(form, customHTML) {
 	if (Now_State == 0 || Now_State == 9) {
 		form.setVisibleById("info", false);
 	}
+	if (Now_State == 5) {
+		form.setVisibleById("paineldesc", false);
+		form.setVisibleById("painel_req", false);
+	}
+
 }	
