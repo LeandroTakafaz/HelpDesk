@@ -8,3 +8,24 @@ $(function () {
         $("#avaliacao").val(index);
     });
 });
+
+//
+var tipoServicoSelect = document.getElementById("tipoServico");
+var tipoCatInput = document.getElementById("tipoCat");
+var tipoSLAInput = document.getElementById("tipoSLA");
+
+tipoServicoSelect.addEventListener("change", function() {
+    var selectedServico = tipoServicoSelect.value;
+
+    var dataset = DatasetFactory.getDataset("dsteste", null, null, null);
+
+    for (var i = 0; i < dataset.values.length; i++) {
+        var row = dataset.values[i];
+        if (row.Servico === selectedServico) {
+            tipoCatInput.value = row["Categoria"];
+            tipoSLAInput.value = row["SLA"];
+            break;
+        }
+    }
+});
+//
