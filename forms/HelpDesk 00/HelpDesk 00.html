@@ -98,28 +98,7 @@
 				Descrição</h3>
 		</div>
 		<div class="panel-body">
-				<div class ="row">
-						<div class="form-group col-md-4">
-							<label>Serviços</label>
-							<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
-						</div>
-					
-						<div class="col-md-2">
-							<label>Categoria:</label>
-							<div class="input-group">
-								<input class="form-control" type="text"
-									name="tipoCat" id="tipoCat" readonly>
-							</div>
-						</div>
-						
-						<div class="col-md-2">
-						<label>SLA:</label>
-						<div class="input-group">
-							<input class="form-control" type="text"
-								name="tipoSLA" id="tipoSLA" readonly>
-						</div>
-					</div>
-				</div>
+				
 
 			<div class="row">
 				<div class="col-md-2">
@@ -187,17 +166,17 @@
 		</div>
 		<div class="row">
 		<div class="col-md-2">
-			<div class="form-group" id="obs">
+			<div class="form-group" id="obs1">
 			<span class="required text-danger">
 				<strong>*</strong>
 				</span>
 				<label for="requisitante">Observações</label>
-				<textarea class="form-control" name="obs" rows="3" cols="20"></textarea>
+				<textarea class="form-control" name="obs1" rows="3" cols="20"></textarea>
 			</div>
 		</div>
 		</div>
 	</div>
-</div>
+</div>				
 
 <!-- Painel de Solução do Suporte -->
 
@@ -219,7 +198,7 @@
 							<td>
 								<div class="form-group" id="obsSoluc">
 									<label for="requisitante">Descreva a solução do suporte solicitado</label>
-									<textarea class="form-control" name="obs" rows="3" cols="20"></textarea>
+									<textarea class="form-control" name="obsSoluc" rows="3" cols="20"></textarea>
 								</div>
 							</td>
 						</tr>
@@ -232,12 +211,46 @@
 			</div>
     </div>
 </div>
+						
+						<div class="form-group col-md-4">
+							<label>Serviços</label>
+							<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
+						</div>
+
+
+						<div class="col-md-2">
+							<label>Categoria:</label>
+							<div class="input-group">
+								<input class="form-control" type="text"
+									name="tipoCat" id="tipoCat" readonly>
+								<span class="input-group-addon">Categoria</span>
+							</div>
+						</div>
+						
+						<div class="col-md-2">
+						<label>SLA:</label>
+						<div class="input-group">
+							<input class="form-control" type="text"
+								name="tipoSLA" id="tipoSLA" readonly>
+							<span class="input-group-addon">SLA</span>
+						</div>
+						</div>
+						
+						<div>
+						<label>Data para a resolução do suporte:</label>
+						<div class="input-group">
+							<input class="form-control" type="text"
+								name="tipoDataSomada" id="tipoDataSomada" readonly>
+							<span class="input-group-addon">Prazo</span>
+						</div>
+						
+				</div>
 
 
 </form>
 </div>
 </body>
-
+	
 	<script src="custom.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide-ratingstars.min.css">
