@@ -99,64 +99,87 @@
 		</div>
 		<div class="panel-body">
 				
-
-			<div class="row">
-				<div class="col-md-2">
-					<div class="form-group" id="titulo">
-						<label for="titulo">Título</label>
-						<span class="required text-danger">
-						<strong>*</strong>
-						</span>
-						<textarea class="form-control" name="tit" rows="1" cols="10"></textarea>
-					</div>
-				</div>
-			</div>	
-			
-			<div class="row">
-				<div class="col-md-2">
-					<div class="form-group" id="descricao">
-						<label for="descricao">Descrição</label>
-						<span class="required text-danger">
-						<strong>*</strong>
-						</span>
-						<textarea class="form-control" name="descricao" rows="4" cols="20"></textarea>
+					<div class="form-group row">	
+					
+						<div class="col-md-2">
+								<label>Serviços</label>
+								<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
+						</div>
+							
+						<!-- Categoria -->
+						
+							<div class="col-md-2">	
+								<div class="input-group">
+									<input class="form-control" type="hidden"
+										name="tipoCat" id="tipoCat">
+								</div>
+							</div>
+						
+						<!-- SLA -->
+						
+							<div class="col-md-2">
+								<div class="input-group">
+									<input class="form-control" type="hidden"
+										name="tipoSLA" id="tipoSLA">
+								</div>
+							</div>
+						
+						<!-- Data Prazo -->
+						
+							<div class="col-md-2">
+								<div class="input-group">
+									<input class="form-control" type="hidden"
+										name="tipoDataSomada" id="tipoDataSomada" >
+								</div>
+							</div>
+					</div>	
+							
+						
+						
+					<div class="form-group row">
+						<div class="col-md-2" id="titulo">
+							<label for="titulo">Título</label>
+							<span class="required text-danger">
+							<strong>*</strong>
+							</span>
+							<input class="form-control" type="text" name="titulo">
+						</div>
 					</div>
 					
-					<div class="form-input">
-						<div class="form-group"  id="info">
-							<label>Informações Suficientes?</label>
+					<div class="form-group row">	
+						<div class="col-md-2">
+							<div class="form-group" id="descricao">
+								<label for="descricao">Descrição</label>
 								<span class="required text-danger">
 								<strong>*</strong>
 								</span>
-									<select class="form-control" name="info">
-										<option value="0">Sim</option>
-										<option value="1">Não</option>
-									</select>
-						</div>
+								<textarea class="form-control" name="descricao" rows="3" cols="20"></textarea>
+							</div>			
+						</div>	
 					</div>
-				</div>	
-			
 			</div>
 		</div>
-	</div>
 
 <!-- avaliação do serviço -->
 
 <div class="panel panel-primary" id="painel_sup">
 	<div class="panel-heading">
-		<h3 class="panel-title">Avalie o suporte</h3>
+		<h3 class="panel-title">Avaliação</h3>
 	</div>
 	<div class="panel-body">
-		<div class="row">
+	
+			<div class="row">
 			<div class="form-group col-md-2">
 					<div class="fluig-style-guide">
+					<label>Avalie o Chamado</label>
 						<div id="avaliacao">
 							<input type="hidden" id="avaliacao" name="avaliacao">
 							<div id="avaliacao_stars"></div>
 						</div>
 					</div>
+			</div>
 			</div>	    
-		</div>
+		
 		<div class="row">	
 			<div class="form-group col-md-2" id="dataAval">
 				<label for="dataAval"><i class="fluigicon fluigicon-calendar icon-xs" aria-hidden="true"></i>
@@ -211,40 +234,6 @@
 			</div>
     </div>
 </div>
-						
-						<div class="form-group col-md-4">
-							<label>Serviços</label>
-							<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
-						</div>
-
-
-						<div class="col-md-2">
-							<label>Categoria:</label>
-							<div class="input-group">
-								<input class="form-control" type="text"
-									name="tipoCat" id="tipoCat" readonly>
-								<span class="input-group-addon">Categoria</span>
-							</div>
-						</div>
-						
-						<div class="col-md-2">
-						<label>SLA:</label>
-						<div class="input-group">
-							<input class="form-control" type="text"
-								name="tipoSLA" id="tipoSLA" readonly>
-							<span class="input-group-addon">SLA</span>
-						</div>
-						</div>
-						
-						<div>
-						<label>Data para a resolução do suporte:</label>
-						<div class="input-group">
-							<input class="form-control" type="text"
-								name="tipoDataSomada" id="tipoDataSomada" readonly>
-							<span class="input-group-addon">Prazo</span>
-						</div>
-						
-				</div>
 
 
 </form>

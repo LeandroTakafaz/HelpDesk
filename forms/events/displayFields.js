@@ -5,35 +5,27 @@ function displayFields(form, customHTML) {
 	form.setValue("name", usuario);
 	form.setHidePrintLink(true);
 
-
 	form.setValue("dataAval", data.format(new Date()));
-
-	//	---Atender Chamado---
-
-	if (Now_State == 9) {
-		form.setVisibleById("info", false);
-		form.setVisibleById("painel_sup", false);
-		form.setVisibleById("p1", false);
-		form.setVisibleById("p25", false);
-		form.setVisibleById("p75", false);
-		form.setVisibleById("p100", false);
-	}
+	
 	//	---Avaliar Chamado---
-	if (Now_State == 5) {
+	if (Now_State == 14) {
 		form.setVisibleById("paineldesc", false);
 		form.setVisibleById("painel_req", false);
 		form.setVisibleById("p1", false);
 		form.setVisibleById("p25", false);
 		form.setVisibleById("p50", false);
 		form.setVisibleById("p75", false);
+		form.setVisibleById("inputAdicionarSoluc", false);
+
 	}
-	//  ---Corrigir Informações---
-	if (Now_State == 4) {
-	form.setVisibleById("painel_sup", false);
-	form.setVisibleById("p1", false);
-	form.setVisibleById("p25", false);
-	form.setVisibleById("p75", false);
-	form.setVisibleById("p100", false);
+	//  Analisar Chamado - Todos
+	if (Now_State == 12 || Now_State == 8 || Now_State == 10 || Now_State == 6) {
+		form.setVisibleById("painel_sup", false);
+		form.setVisibleById("p1", false);
+		form.setVisibleById("p25", false);
+		form.setVisibleById("p75", false);
+		form.setVisibleById("p100", false);
+
 	}
 
 	//	---Abrir Chamado---
@@ -45,16 +37,8 @@ function displayFields(form, customHTML) {
 		form.setVisibleById("p50", false);
 		form.setVisibleById("p75", false);
 		form.setVisibleById("p100", false);
+		form.setVisibleById("solucao", false);
+
+		
 	}
-	
-	//	---Analisar Chamado---
-	
-	if (Now_State == 6) {
-		form.setVisibleById("painel_sup", false);
-		form.setVisibleById("p1", false);
-		form.setVisibleById("p50", false);
-		form.setVisibleById("p75", false);
-		form.setVisibleById("p100", false);
-	}
-	
 }	

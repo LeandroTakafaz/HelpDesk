@@ -11,21 +11,12 @@ $(function () {
     });
 });
  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var tipoServicoSelect = document.getElementById("tipoServico");
 var tipoCatInput = document.getElementById("tipoCat");
 var tipoSLAInput = document.getElementById("tipoSLA");
 var tipoDataSomadaInput = document.getElementById("tipoDataSomada");
-
-
-//    Função para Pular Data
-
-function ajustarParaProximoDiaUtil(data) {
-    while (data.getDay() === 6 || data.getDay() === 0) {
-        data.setDate(data.getDate() + 1);
-    }
-}
 
 tipoServicoSelect.addEventListener("change", function() {
     var selectedServico = tipoServicoSelect.value;
@@ -38,25 +29,29 @@ tipoServicoSelect.addEventListener("change", function() {
             var hora = parseInt(row["SLA"]); 
             var dataAtual = new Date(); 
             dataAtual.setHours(dataAtual.getHours() + hora); 
-
-            // Chama a função para ajustar para o próximo dia útil
-            ajustarParaProximoDiaUtil(dataAtual);
+            
+            if (dataAtual.getDay() === 6) {      
+                dataAtual.setDate(dataAtual.getDate() + 2);
+            }
+            if (dataAtual.getDay() === 0) {      
+                dataAtual.setDate(dataAtual.getDate() + 1);
+            }
 
             tipoSLAInput.value = hora; 
             tipoCatInput.value = row["Categoria"]; 
 
-            // Formate a data como "dd-mm-aaaa"
             var dia = String(dataAtual.getDate()).padStart(2, '0'); 
             var mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); 
-            var ano = dataAtual.getFullYear(); 
-            var dataFormatada = dia + '-' + mes + '-' + ano;
-            tipoDataSomadaInput.value = dataFormatada;
+            var ano = dataAtual.getFullYear();
+            var hora = String(dataAtual.getHours()).padStart(2, '0');
+            var minuto = String(dataAtual.getMinutes()).padStart(2, '0');
 
+            var dataFormatada = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto;
+            tipoDataSomadaInput.value = dataFormatada;
+            
             break;
         }
     }
 });
 
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
