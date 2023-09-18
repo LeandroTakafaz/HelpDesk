@@ -28,6 +28,11 @@ function enableFields(form) {
 		form.setEnabled("obsSoluc___5", false);
 		form.setEnabled("info", false);
 		form.setEnabled("dataAval", false);
-		
 	}
+	
+		// ---Abrir Chamado---
+
+		if (Now_State == 0) {
+			form.setEnabled("tipoCat", false);
+		}
 }

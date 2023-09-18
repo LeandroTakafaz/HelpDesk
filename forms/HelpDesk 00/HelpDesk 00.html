@@ -90,6 +90,8 @@
 		</div>
 	</div>
 
+<!-- Fim do Painel -->
+
 <!-- Painel de Descrição -->
 
 	<div class="panel panel-primary" id="paineldesc">
@@ -105,25 +107,24 @@
 							<label>Serviços</label>
 								<span class="required text-danger">
 									<strong>*</strong>
-									</span>
+								</span>
 							<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
 						</div>
 							
 						<!-- Categoria -->
 						
-							<div class="col-md-2">	
-								<div class="input-group">
-									<input class="form-control" type="hidden"
-										name="tipoCat" id="tipoCat">
-								</div>
+						<div class="col-md-2">	
+							<div class="input-group">
+								<label>Categoria</label>
+								<input class="form-control" type="text" name="tipoCat" id="tipoCat">
 							</div>
+						</div>
 						
 						<!-- SLA -->
 						
 							<div class="col-md-2">
 								<div class="input-group">
-									<input class="form-control" type="hidden"
-										name="tipoSLA" id="tipoSLA">
+									<input class="form-control" type="hidden" name="tipoSLA" id="tipoSLA">
 								</div>
 							</div>
 						
@@ -131,13 +132,10 @@
 						
 							<div class="col-md-2">
 								<div class="input-group">
-									<input class="form-control" type="hidden"
-										name="tipoDataSomada" id="tipoDataSomada" >
+									<input class="form-control" type="hidden" name="tipoDataSomada" id="tipoDataSomada" >
 								</div>
 							</div>
 					</div>	
-							
-						
 						
 					<div class="form-group row">
 						<div class="col-md-2" id="titulo">
@@ -163,6 +161,8 @@
 			</div>
 		</div>
 
+<!-- Fim do Painel -->
+
 <!-- avaliação do serviço -->
 
 <div class="panel panel-primary" id="painel_sup">
@@ -172,15 +172,15 @@
 	<div class="panel-body">
 	
 			<div class="row">
-			<div class="form-group col-md-2">
+				<div class="form-group col-md-2">
 					<div class="fluig-style-guide">
-					<label>Avalie o Chamado</label>
-						<div id="avaliacao">
-							<input type="hidden" id="avaliacao" name="avaliacao">
-							<div id="avaliacao_stars"></div>
-						</div>
+						<label>Avalie o Chamado</label>
+							<div id="avaliacao">
+								<input type="hidden" id="avaliacao" name="avaliacao">
+								<div id="avaliacao_stars"></div>
+							</div>
 					</div>
-			</div>
+				</div>
 			</div>	    
 		
 		<div class="row">	
@@ -191,18 +191,20 @@
 			</div>
 		</div>
 		<div class="row">
-		<div class="col-md-2">
-			<div class="form-group" id="obs1">
-			<span class="required text-danger">
-				<strong>*</strong>
-				</span>
-				<label for="requisitante">Observações</label>
-				<textarea class="form-control" name="obs1" rows="3" cols="20"></textarea>
+			<div class="col-md-2">
+				<div class="form-group" id="obs1">
+					<span class="required text-danger">
+					<strong>*</strong>
+					</span>
+					<label for="requisitante">Observações</label>
+					<textarea class="form-control" name="obs1" rows="3" cols="20"></textarea>
+				</div>
 			</div>
 		</div>
-		</div>
 	</div>
-</div>				
+</div>			
+
+<!-- Fim do Painel -->
 
 <!-- Painel de Solução do Suporte -->
 
@@ -241,6 +243,40 @@
 		</div>
     </div>
 </div>
+
+<!-- Fim do Painel-->
+
+<!-- Painel de Aprovação do Gerente -->
+
+<div class="panel panel-primary" id="Aprov">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="flaticon flaticon-receipt icon-sm" aria-hidden="true"></i>
+        Aprovação de Compra</h3>
+    </div>
+    <div class="panel-body">
+
+		<div class="form-group row">
+			<div class="col-md-2" id="solic">
+				<label for="solic">Nome Solicitante</label>
+				<select name="solic" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
+			</div>
+
+			<div class="col-md-1" id="unidade">
+				<label for="unidade">Unidade</label>
+				<select name="unidade" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="groupID"></select>
+			</div>
+		</div>
+
+		<div class="form-group row" id="gerente">
+			<div class="col-md-2">
+				<label for="gerente">Nome do Gerente</label>
+				<select name="gerente" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Fim do Painel -->
 
 </form>
 </div>
