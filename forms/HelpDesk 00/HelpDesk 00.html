@@ -94,72 +94,112 @@
 
 <!-- Painel de Descrição -->
 
-	<div class="panel panel-primary" id="paineldesc">
-		<div class="panel-heading">
-				<h3 class="panel-title"><i class="flaticon flaticon-form-list icon-sm" aria-hidden="true"></i>
-				Descrição</h3>
-		</div>
-		<div class="panel-body">
-				
-					<div class="form-group row">	
-					
-						<div class="col-md-2">
-							<label>Serviços</label>
-								<span class="required text-danger">
-									<strong>*</strong>
-								</span>
-							<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
-						</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><i class="fluigicon fluigicon-files icon-sm"></i> Descrição</h3>
+	</div>
+	
+	<div class="form-group row">
+		<div class="col-md-6">
+			<div class="panel-body">		
+				<div class="panel panel-primary">
+					<div class="panel-body">
+						<div class="form-group row">
+								<div class="col-md-6">
+								
+									<label>Serviços</label>
+									<select name="tipoServico" id="tipoServico" class="form-control" dataset="dsteste" datasetkey="Servico" datasetvalue="Servico"></select>
+								</div>
+								
+							<!-- Categoria -->
 							
-						<!-- Categoria -->
-						
-						<div class="col-md-2">	
-							<div class="input-group">
-								<label>Categoria</label>
-								<input class="form-control" type="text" name="tipoCat" id="tipoCat">
-							</div>
-						</div>
-						
-						<!-- SLA -->
-						
-							<div class="col-md-2">
-								<div class="input-group">
-									<input class="form-control" type="hidden" name="tipoSLA" id="tipoSLA">
+								
+								<div class="col-md-3">	
+									<label>Categoria</label>
+									<div class="input-group">
+										<input class="form-control" type="text" readonly
+											name="tipoCat" id="tipoCat">
+									</div>
 								</div>
-							</div>
-						
-						<!-- Data Prazo -->
-						
-							<div class="col-md-2">
-								<div class="input-group">
-									<input class="form-control" type="hidden" name="tipoDataSomada" id="tipoDataSomada" >
+							
+							<!-- SLA -->
+							
+								<div class="col-md-2">
+									<div class="input-group">
+										<input class="form-control" type="hidden"
+											name="tipoSLA" id="tipoSLA">
+									</div>
 								</div>
-							</div>
-					</div>	
+							
+							<!-- Data Prazo -->
+							
+								<div class="col-md-2">
+									<div class="input-group">
+										<input class="form-control" type="hidden"
+											name="tipoDataSomada" id="tipoDataSomada" >
+									</div>
+								</div>
+						</div>	
 						
-					<div class="form-group row">
-						<div class="col-md-2" id="titulo">
-							<label for="titulo">Título</label>
-							<span class="required text-danger">
-							<strong>*</strong>
-							</span>
-							<input class="form-control" type="text" name="titulo">
-						</div>
-					</div>
-					
-					<div class="form-group row">	
-						<div class="col-md-2">
-							<div class="form-group" id="descricao">
-								<label for="descricao">Descrição</label>
+							
+						<div class="form-group row">
+							<div class="col-md-6" id="titulo">
+								<label for="titulo">Título</label>
 								<span class="required text-danger">
 								<strong>*</strong>
 								</span>
-								<textarea class="form-control" name="descricao" rows="3" cols="20"></textarea>
-							</div>			
+								<input class="form-control" type="text" name="titulo">
+							</div>
+						</div>
+				
+						<div class="form-group row">	
+							<div class="col-md-6">
+								<div class="form-group" id="descricao">
+									<label for="descricao">Descrição</label>
+									<span class="required text-danger">
+									<strong>*</strong>
+									</span>
+									<textarea class="form-control" name="descricao" rows="7" cols="20"></textarea>
+								</div>			
+							</div>	
+						</div>				
+					</div>	
+				</div>
+			</div>
+		</div>									
+	<div class="panel-body">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-body">															
+							<div class="panel-body">
+								<div class="card">
+									<div class="card-body">
+										<h3 class="card-title">
+											<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+											<lord-icon src="https://cdn.lordicon.com/wdqztrtx.json" trigger="loop"
+												colors="primary:#000000" style="width: 25px;height:25px;padding-top: 4px;">
+											</lord-icon>
+											Instruções:
+										</h3>
+										<ul>
+											<div id="ad">
+												<li><strong><u>Preencha com atenção os CAMPOS!</u></strong></li>
+												<ol>							
+													<li>Em "Serviços", selecione o problema por qual você está passando;</li>
+													<li>Em "Título", especifique o problema;</li>
+													<li>Em "Descrição", descreva brevemente sobre o problema.</li> 
+												</ol>
+											</div>																																					
+										</ul>
+									</div>
+								</div>
+							</div>								
 						</div>	
 					</div>
+				</div>
 			</div>
-		</div>
+		</div>		
+	</div>
 
 <!-- Fim do Painel -->
 
