@@ -248,32 +248,33 @@
 
 <!-- Painel de Aprovação do Gerente -->
 
-<div class="panel panel-primary" id="Aprov">
-    <div class="panel-heading">
-        <h3 class="panel-title"><i class="flaticon flaticon-receipt icon-sm" aria-hidden="true"></i>
-        Aprovação de Compra</h3>
-    </div>
-    <div class="panel-body">
+		<input type="hidden" name="hd_numSuperior" id="numSuperior">
+		<input type="hidden" name="hdn_lastState" id="hdn_lastState">
+		<input type="hidden" name="hdn_State" id="hdn_State">
+		<input type="hidden" name="hdn_diretoria" id="hdn_diretoria">
 
-		<div class="form-group row">
-			<div class="col-md-2" id="solic">
-				<label for="solic">Nome Solicitante</label>
-				<select name="solic" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
-			</div>
-
-			<div class="col-md-1" id="unidade">
-				<label for="unidade">Unidade</label>
-				<select name="unidade" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="groupID"></select>
-			</div>
-		</div>
-
-		<div class="form-group row" id="gerente">
-			<div class="col-md-2">
-				<label for="gerente">Nome do Gerente</label>
-				<select name="gerente" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName"></select>
-			</div>
-		</div>
+<div class="panel panel-primary" id="painel_aprov">
+	<div class="panel-heading">
+		<h3 class="panel-title"><i class="flaticon flaticon-document-approved icon-md" aria-hidden="true"></i> Aprovação Superior</h3>
 	</div>
+		<div class="panel-body">
+			<div class="form-group row">
+				<div class="col-md-3">
+					<label for="cmb_NomeSolicitante">Nome Solicitante</label>
+					<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<label for="cmb_GerenteSolicitante">Gerente</label>
+					<input type="text" class="form-control" name="cmb_GerenteSolicitante" id="cmb_GerenteSolicitante" readonly>
+				</div>
+					
+				<div class="col-md-4">
+					<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
+					<input type="text" class="form-control" name="cmb_UnidadeSolicitante" id="cmb_UnidadeSolicitante" readonly>
+				</div>
+			</div>
+		</div>
 </div>
 
 <!-- Fim do Painel -->

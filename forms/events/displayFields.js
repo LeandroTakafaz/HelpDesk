@@ -3,7 +3,8 @@ function displayFields(form, customHTML) {
 	var data = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	var usuario = getValue("WKUser");
 	form.setValue("name", usuario);
-	form.setValue("unidade", usuario);
+	form.setValue("cmb_NomeSolicitante", usuario);
+	form.setValue("cmb_UnidadeSolicitante", usuario);
 	form.setHidePrintLink(true);
 	form.setValue("dataAval", data.format(new Date()));
 	
