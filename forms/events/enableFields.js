@@ -29,10 +29,4 @@ function enableFields(form) {
 		form.setEnabled("info", false);
 		form.setEnabled("dataAval", false);
 	}
-	
-		// ---Abrir Chamado---
-
-		if (Now_State == 0) {
-			form.setEnabled("tipoCat", false);
-		}
 }
