@@ -18,7 +18,10 @@ var tipoCatInput = document.getElementById("tipoCat");
 var tipoSLAInput = document.getElementById("tipoSLA");
 var tipoDataSomadaInput = document.getElementById("tipoDataSomada");
 
-tipoServicoSelect.addEventListener("change", function() {
+// Define os dias não úteis (por exemplo, sábado e domingo)
+var diasNaoUteis = [0, 6]; // Domingo e Sábado
+
+tipoServicoSelect.addEventListener("change", function () {
     var selectedServico = tipoServicoSelect.value;
 
     var dataset = DatasetFactory.getDataset("dsteste", null, null, null);
@@ -26,34 +29,39 @@ tipoServicoSelect.addEventListener("change", function() {
     for (var i = 0; i < dataset.values.length; i++) {
         var row = dataset.values[i];
         if (row.Servico === selectedServico) {
-            var hora = parseInt(row["SLA"]); 
-            var dataAtual = new Date(); 
-            dataAtual.setHours(dataAtual.getHours() + hora); 
-            
-            if (dataAtual.getDay() === 6) {      
-                dataAtual.setDate(dataAtual.getDate() + 2);
-            }
-            if (dataAtual.getDay() === 0) {      
+            var hora = parseInt(row["SLA"]);
+            var dataAtual = new Date();
+            var diasAdicionados = 0;
+
+            // Loop para adicionar os dias úteis
+            while (diasAdicionados < hora) {
                 dataAtual.setDate(dataAtual.getDate() + 1);
+                var diaDaSemana = dataAtual.getDay();
+
+                // Verifica se o dia é não útil
+                if (diasNaoUteis.includes(diaDaSemana)) {
+                    continue; // Pula dias não úteis
+                }
+
+                diasAdicionados++;
             }
 
-            tipoSLAInput.value = hora; 
-            tipoCatInput.value = row["Categoria"]; 
+            tipoSLAInput.value = hora;
+            tipoCatInput.value = row["Categoria"];
 
-            var dia = String(dataAtual.getDate()).padStart(2, '0'); 
-            var mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); 
+            var dia = String(dataAtual.getDate()).padStart(2, "0");
+            var mes = String(dataAtual.getMonth() + 1).padStart(2, "0");
             var ano = dataAtual.getFullYear();
-            var hora = String(dataAtual.getHours()).padStart(2, '0');
-            var minuto = String(dataAtual.getMinutes()).padStart(2, '0');
+            var hora = String(dataAtual.getHours()).padStart(2, "0");
+            var minuto = String(dataAtual.getMinutes()).padStart(2, "0");
 
-            var dataFormatada = ano + '-' + mes + '-' + dia + ' ' + hora + ':' + minuto;
+            var dataFormatada = ano + "-" + mes + "-" + dia + " " + hora + ":" + minuto;
             tipoDataSomadaInput.value = dataFormatada;
-            
+
             break;
         }
     }
 });
-
 /***********ESCOLHA DO SUPERIOR******************/
 
 function unidade() {
