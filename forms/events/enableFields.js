@@ -11,6 +11,7 @@ function enableFields(form) {
 		form.setEnabled("txt_categoria", false);
 		form.setEnabled("tit", false);
 		form.setEnabled("descricao", false);
+		form.setEnabled("tipoCat", false);
 		form.setEnabled("titulo", false);
 	}
 
@@ -28,5 +29,18 @@ function enableFields(form) {
 		form.setEnabled("obsSoluc___5", false);
 		form.setEnabled("info", false);
 		form.setEnabled("dataAval", false);
+		form.setEnabled("equipamento", false);
+		form.setEnabled("dataDesfecho___1", false);
+		form.setEnabled("dataDesfecho___2", false);
+		form.setEnabled("dataDesfecho___3", false);
+		form.setEnabled("dataDesfecho___4", false);
+		form.setEnabled("dataDesfecho___5", false);
+	}
+	
+	//	---Aprovar Compra || Realizar Compra---
+	
+	if (Now_State == 25 || Now_State == 35) {
+	form.setEnabled("equipamento", false);
+	form.setEnabled("valorEstimado", false);
 	}
 }
