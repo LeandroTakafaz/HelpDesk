@@ -63,7 +63,28 @@ tipoServicoSelect.addEventListener("change", function () {
     }
 });
 
+/*************ATUALIZAÇÃO DOS CAMPOS DE CONFIRMAÇÃO**************/
 
+function controlarCampos() {
+    var select = document.getElementById("equipSelect");
+    var equipamento = document.getElementById("equipamento");
+    var valorEstimado = document.getElementById("valorEstimado");
+    
+    if (select.value === "sim") {
+        equipamento.style.display = "block"; // Mostra o campo Equipamento Solicitado
+        valorEstimado.style.display = "block"; // Mostra o campo Valor Estimado
+    } else {
+        equipamento.style.display = "none"; // Oculta o campo Equipamento Solicitado
+        valorEstimado.style.display = "none"; // Oculta o campo Valor Estimado
+    }
+}
+
+// Adiciona o evento onchange ao campo select
+var select = document.getElementById("equipSelect");
+select.addEventListener("change", controlarCampos);
+
+// Chama a função inicialmente para definir o estado dos campos com base na escolha inicial
+controlarCampos();
 
 /***********ESCOLHA DO SUPERIOR******************/
 
