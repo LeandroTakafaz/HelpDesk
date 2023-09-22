@@ -350,7 +350,10 @@ function slcProjeto(linha) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
-    else if (Now == 5 || Now == 55 || Now == 107 || Now == 13 || Now == 51 || Now == 54 || Now == 14 || Now == 15 || Now == 16 || Now == 18 || Now == 98) {
+    
+    /**************Bloqueia Campo Projeto Baseado no Estado Atual****************/
+    
+    else if (Now == 25 || Now == 35)  {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
@@ -462,7 +465,10 @@ function slcProjeto(linha) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
-    else if (Now == 5 || Now == 55 || Now == 107 || Now == 13 || Now == 51 || Now == 54 || Now == 14 || Now == 15 || Now == 16 || Now == 18 || Now == 98)  {
+    
+    /**************Bloqueia Campo Ação Baseado no Estado Atual****************/        
+    
+    else if (Now == 25 || Now == 35)  {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
@@ -577,7 +583,10 @@ function slcUnidade(linha) {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }
-    else if (Now == 5 || Now == 55 || Now == 107 || Now == 13 || Now == 51 || Now == 54 || Now == 14 || Now == 15 || Now == 16 || Now == 18 || Now == 98) {
+   
+    /**************Bloqueia Campo Unidade Baseado no Estado Atual****************/
+    
+    else if (Now == 25 || Now == 35)  {
         att = document.createAttribute('readonly')
         vselect.setAttributeNode(att)
     }

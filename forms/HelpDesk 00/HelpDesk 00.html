@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
 	<script type="text/javascript" src="util.js"></script>
+	<script type="text/javascript" src="formatMoeda.js"></script>
 	
 </head>
 <body>
@@ -16,27 +17,22 @@
 <!--progress bar-->
 <div class="progress" id="p1">
     <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
-        <span></span>
-    </div>
-</div>
-<div class="progress" id="p25">
-    <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
-        <span></span>
+        <span>1%</span>
     </div>
 </div>
 <div class="progress" id="p50">
     <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-        <span></span>
+        <span>50%</span>
     </div>
 </div>
 <div class="progress" id="p75">
     <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-        <span></span>
+        <span>75%</span>
     </div>
 </div>
 <div class="progress" id="p100">
     <div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-        <span></span>
+        <span>100%</span>
     </div>
 </div>
 
@@ -188,8 +184,8 @@
 												<li><strong><u>Preencha com atenção os CAMPOS!</u></strong></li>
 												<ol>							
 													<li>Em "Serviços", selecione o problema por qual você está passando;</li>
-													<li>Em "Título", especifique o problema;</li>
-													<li>Em "Descrição", descreva brevemente sobre o problema.</li> 
+													<li>Em "Título", descreva o problema;</li>
+													<li>Em "Descrição", descreva de forma breve sobre o problema.</li> 
 												</ol>
 											</div>																																					
 										</ul>
@@ -205,7 +201,7 @@
 </div>
 <!-- Fim do Painel -->
 
-<!-- avaliação do serviço -->
+<!-- Painel de Avaliação -->
 
 <div class="panel panel-primary" id="painel_sup">
 	<div class="panel-heading">
@@ -213,17 +209,21 @@
 	</div>
 	<div class="panel-body">
 	
-			<div class="row">
-				<div class="form-group col-md-2">
-					<div class="fluig-style-guide">
-						<label>Avalie o Chamado</label>
-							<div id="avaliacao">
-								<input type="hidden" id="avaliacao" name="avaliacao">
-								<div id="avaliacao_stars"></div>
-							</div>
-					</div>
-				</div>
-			</div>	    
+			<div class="form-group row" id="aval">
+				<div class="col-md-2">
+					<label for="aval">Avaliação do Chamado</label>
+					<span class="required text-danger">
+						<strong>*</strong>
+					</span>
+					<select name="aval">
+						<option value="1">Excelente</option>
+						<option value="2">Bom</option>
+						<option value="3">Mais ou Menos</option>
+						<option value="4">Ruim</option>
+						<option value="5">Péssimo</option>
+					</select>
+				</div>	
+			</div>			    
 		
 		<div class="row">	
 			<div class="form-group col-md-2" id="dataAval">
@@ -255,34 +255,34 @@
         <h3 class="panel-title"><i class="flaticon flaticon-receipt icon-sm" aria-hidden="true"></i>
         Resposta ao usuário</h3>
     </div>
-    <div class="panel-body">
-        		<div class="col-md-6">
-			<div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
-				<table class="table" cellspacing="0" tablename="ingre" noaddbutton="true" nodeletebutton="true">
-					<thead>
-					<tr class="tableHeadRow">
-						<th class="tableColumn">Desfecho do suporte</th>
-						<th class="tableColumn">Data do desfecho</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>
-							<div id="obsSoluc">					
-									<textarea class="form-control" name="obsSoluc" rows="5" cols="40"></textarea>
-							</div>
-						</td>					
-						<td>
-							<input type=date name="dataDesfecho" id="dataDesfecho" class="form-control">		
-						</td>
-					</tr>
-					</tbody>
-				</table>
+  <div class="panel-body">
+        <div class="col-md-6">
+            <div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+                <table class="table" cellspacing="0" tablename="ingre" noaddbutton="true" nodeletebutton="true">
+                    <thead>
+                        <tr class="tableHeadRow">
+                            <th class="tableColumn">Desfecho do suporte</th>
+                            <th class="tableColumn">Data do Desfecho</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaBody">
+                        <tr>
+                            <td>
+                                <div id="obsSoluc">                    
+                                    <textarea class="form-control" name="obsSoluc" rows="5" cols="40"></textarea>
+                                </div>
+                            </td>
+                            <td>
+                                <td data-label="Data e Hora Atuais" id="dataHoraAtual"></td>		
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+				<button type="button" class="btn btn-primary btn-xs" name="inputAdicionar" id="inputAdicionar" onclick="wdkAddChild('ingre')">Adicionar</button>
 			</div>
-			<div class="form-group">
-				<button type="button" class="btn btn-primary btn-xs" name="inputAdicionar" id="inputAdicionar" onclick="wdkAddChild('ingre')">Adicionar solução</button>
-			</div>
-		</div>
+        </div>
     </div>
 </div>
 
@@ -300,40 +300,22 @@
 				<h3 class="panel-title"><i class="fluigicon fluigicon-files icon-sm"></i> Aprovação do Superior</h3>
 			</div>
 			
-			<div class="form-group row">
-				<div class="col-md-6">
-					<div class="panel-body">		
-						<div class="panel panel-primary">
-						<div class="panel-body">
-							<div class="form-group row" id="cmb_NomeSolicitante">
-						<div class="col-md-4">
-							<label for="cmb_NomeSolicitante">Nome Solicitante</label>
-							<select name="cmb_NomeSolicitante" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
-							</select>
-						</div>
-						<div class="col-md-4" id="cmb_GerenteSolicitante">
-							<label for="cmb_GerenteSolicitante">Gerente</label>
-							<input type="text" class="form-control" name="cmb_GerenteSolicitante" readonly>
-						</div>
-							
-						<div class="col-md-4" id="cmb_UnidadeSolicitante">
-							<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
-							<input type="text" class="form-control" name="cmb_UnidadeSolicitante" readonly>
-						</div>
-					</div>
-					
-					<div class="form-group row" id="aproval">
-						<div class="col-md-2">
-							<label for="aproval">Aprovação</label>
-							<span class="required text-danger">
-								<strong>*</strong>
-							</span>
-								<select name="aproval">
-									<option value="sim_aproval">Sim</option>
-									<option value="nao_aproval">Não</option>
+					<div class="panel-body">
+						<div class="form-group row">
+							<div class="col-md-3" id="NomeSolicita">
+								<label for="cmb_NomeSolicitante">Nome Solicitante</label>
+								<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
 								</select>
-						</div>
-					</div>
+							</div>
+							<div class="col-md-3" id="GerenteSolicita">
+								<label for="cmb_GerenteSolicitante">Gerente</label>
+								<input type="text" class="form-control" name="cmb_GerenteSolicitante" id="cmb_GerenteSolicitante" readonly>
+							</div>
+			
+							<div class="col-md-4" id="UnidadeSolicita">
+								<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
+								<input type="text" class="form-control" name="cmb_UnidadeSolicitante" id="cmb_UnidadeSolicitante" readonly>
+							</div>
 					
 					<div class="form-group row" id="equip">
 					    <div class="col-md-3">
@@ -341,32 +323,30 @@
 					        <span class="required text-danger">
 					            <strong>*</strong>
 					        </span>
+					        <div>
 					        <select name="equip" id="equipSelect">
 					            <option value="nao">Não</option>
 					            <option value="sim">Sim</option>
 					        </select>
+					        </div>
 					    </div>
+					</div>
 					</div>
 					
-					<div class="form-group row" id="equipamento">
-					    <div class="col-md-4">
-					        <label for="equipamento">Equipamento Solicitado</label>
-					        <input class="form-control" type="text" name="equipamento">
-					    </div>
-					    
-					    <div class="col-md-4" id="valorEstimado">
-					        <label for="valorEstimado">Valor Estimado</label>
-					        <input class="form-control" type="number" name="valorEstimado">
-					    </div>
-</div>
-				</div>
-						
-												
-						</div>	
-					</div>
-				</div>
-														
-					<div class="panel-body">
+					
+						<div class="form-group row" id="equipamento">
+						    <div class="col-md-2">
+						        <label for="equipamento">Equipamento Solicitado</label>
+						        <input class="form-control" type="text" name="equipamento">
+						    </div>
+						    
+	   					 	<div class="col-md-4" id="valorEstimado">
+						        <label for="valorEstimado">Valor Estimado</label>
+						        <div>
+								R$ <input name="valorEstimado" onkeyup="k(this);" /><br/>
+								</div>
+						    </div>
+																														
 						<div class="col-md-6">
 							<div class="panel panel-primary" id="painel_nota">
 								<div class="panel-body">															
@@ -386,8 +366,8 @@
 																<ol>							
 																	<li>No canto superior direito, clique em 'Anexos';</li>
 																	<li>Na parte central, clique em 'Selecionar Arquivos;</li>
-																	<li>Procure o documento (NF) no seu computador e clique em 'Abrir';</li>
-																	<li>Após seu documento ser carregado, no canto inferior esquerdo, clique em 'Enviar'.</li>  
+																	<li>Procure o arquivo (NF) na sua pasta e clique em 'Abrir';</li>
+																	<li>Após seu arquivo ser carregado, no canto inferior esquerdo, clique em 'Enviar'.</li>  
 																</ol>
 															</div>																																					
 														</ul>
@@ -397,8 +377,9 @@
 										</div>	
 									</div>
 								</div>
-							</div>
-						</div>		
+							</div>							
+						</div>
+							
 					
 				<div class="table-responsive" id="tabela_Rateio">
 					<table class="table">
@@ -424,16 +405,6 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td>
-													<span class="fluig-style-guide fs-display-block fs-md-space">
-														<i type="button"
-															class="fluigicon fluigicon-trash fluigicon-md delRateio"
-															id="deleta_rateio" name="deleta_rateio"
-															onclick="Javascript:fnCustomDelete(this);"
-															style="cursor:pointer">
-														</i>
-													</span>
-												</td>
 												<td>
 													
 													<div class="form-group row">
@@ -546,14 +517,17 @@
 </div>
 </body>
 	
+	<script>function atualizarDataHoraAtual() {
+            const dataHoraAtual = new Date();
+            const formatoDataHora = dataHoraAtual.toLocaleString();
+            document.getElementById('dataHoraAtual').textContent = formatoDataHora;
+        }
+        atualizarDataHoraAtual();</script>
+	
 	<script src="custom.js"></script>
 	<script src="dtc.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide-ratingstars.min.css">
-	<script src="/style-guide/js/fluig-style-guide-ratingstars.min.js">
-		var avaliacao = FLUIGC.stars("avaliacao");
-	</script>
-
 	<script type="text/javascript">
 		var calendariodataAval = FLUIGC.calendar('#dataAval', {
 			pickDate: false,

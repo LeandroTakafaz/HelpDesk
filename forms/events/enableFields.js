@@ -11,7 +11,6 @@ function enableFields(form) {
 		form.setEnabled("txt_categoria", false);
 		form.setEnabled("tit", false);
 		form.setEnabled("descricao", false);
-		form.setEnabled("tipoCat", false);
 		form.setEnabled("titulo", false);
 	}
 
