@@ -11,7 +11,7 @@ var diasNaoUteis = [0, 6]; // Domingo e Sábado
 tipoServicoSelect.addEventListener("change", function () {
     var selectedServico = tipoServicoSelect.value;
 
-    var dataset = DatasetFactory.getDataset("dsteste", null, null, null);
+    var dataset = DatasetFactory.getDataset("dsSuporte", null, null, null);
 
     for (var i = 0; i < dataset.values.length; i++) {
         var row = dataset.values[i];
@@ -115,52 +115,7 @@ function unidade() {
 window.addEventListener("load", unidade);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function addRateioz() {
-    wdkAddChild("dadosrateio");
-    var linha = getRowDot()
-    slcProjeto(linha)
-    slcAcao(linha)
-    slcUnidade(linha)
 
-}
-function fnCustomDelete(elem) {
-    fnWdkRemoveChild(elem);
-}
-
-function setSelectedZoomItem(selectedItem) {
-
-    var indice = -1;
-    var arraySelectedItem = selectedItem.inputId.split("___");
-
-    if (arraySelectedItem != null && arraySelectedItem != undefined && arraySelectedItem.length > 1) {
-        indice = arraySelectedItem[1];
-    }
-
-    if (selectedItem["inputId"] == "txt_projeto___" + indice) {
-
-        document.getElementById("txt_codprojeto___" + indice).value = selectedItem["CODCCUSTO"];
-
-        reloadZoomFilterValues("txt_acao___" + indice, "txt_projeto," + document.getElementById("txt_codprojeto___" + indice).value + ",txt_acao," + document.getElementById("txt_acao___" + indice).value);
-
-    }
-    if (selectedItem["inputId"] == "txt_acao___" + indice) {
-
-        document.getElementById("txt_codacao___" + indice).value = selectedItem["CODACAO"];
-
-        reloadZoomFilterValues("txt_recursos___" + indice, "txt_projeto," + document.getElementById("txt_codprojeto___" + indice).value + ",txt_acao," + document.getElementById("txt_codacao___" + indice).value);
-
-        buscaSaldo(document.getElementById("txt_codprojeto___" + indice), document.getElementById("txt_codacao___" + indice))
-
-        var saldo = document.getElementById("txt_saldo___" + indice).value
-
-        // console.log(saldo)
-        saldo = formataCasasDecimais(saldo)
-        // console.log(saldo)
-        saldo = moeda.formatar(saldo)
-        document.getElementById("txt_saldo___" + indice).value = saldo
-
-    }
-}
 
 
 const hoje = new Date();

@@ -9,10 +9,17 @@
 	<script type="text/javascript" src="util.js"></script>
 	<script type="text/javascript" src="formatMoeda.js"></script>
 	
+	
+	
 </head>
 <body>
 <div class="fluig-style-guide">
 <form name="form" role="form">
+
+	 		 <!--  <Hidden Dotação Orçamentária -->
+			<input type="hidden" name="codProjeto" id="codProjeto">
+			<input type="hidden" name="codAcao" id="codAcao">
+			<input type="hidden" name="codRecurso" id="codRecurso">  
 
 <!--progress bar-->
 <div class="progress" id="p1">
@@ -73,13 +80,15 @@
 							<input type="text" placeholder="0000" mask="0000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="ramal" maxlength="4" />
 					</div>
 					
-					<div class="form-group fs-cursor-pointer quan" id="maquina">
+					<div class="form-group fs-cursor-pointer quan col-md-2" id="maquina">
 						<div class="input-group date">
-						<label for="maquina">Número da Maquina (AMWKS)</label>
+						<label for="maquina">Nº da Maquina (AMWKS)</label>
 							<span class="required text-danger">
 								<strong>*</strong>
-							</span>	
+							</span>
+							<div>
 							<input type="text" placeholder="00000" class="form-control uppercase" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" name="maquina" id="maquina" maxlength="5" />
+							</div>
 						</div>
 					</div>
 				
@@ -379,135 +388,86 @@
 								</div>
 							</div>							
 						</div>
-							
 					
-				<div class="table-responsive" id="tabela_Rateio">
-					<table class="table">
-						<thead>							
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<div class="col-md-2">
-										<button type="button" class="waves-effect waves-light btn btn-info"
-											id="addRateio" onclick="addRateioz();">Adicionar</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<table id="dadosrateio" tablename="dadosrateio" class="table table-hover"
-										noaddbutton="true" nodeletebutton="true">
-										<thead>
-											<tr>
-												<td></td>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>
-													
-													<div class="form-group row">
-														<div class="col-md-9" style="display: none;">
-															<label for="txt_projeto">Projeto<span
-																	class="Obrigatorio"><strong>*</strong></span></label>
-															<input type="zoom" id="txt_projeto" name="txt_projeto"
-																data-zoom="{
-																			'displayKey':'NOME',
-																			'datasetId':'dsprojeto',
-																			'maximumSelectionLength':'1',
-																			'placeholder':'Escolha o projeto',
-																			'fields':[
-																			{
-																				'field':'CODCCUSTO',
-																				'label':'CODIGO'
-																			},{
-																					'field':'NOME',
-																					'label':'NOME',
-																					'standard':'true'
-																			}
-																			]
-																			}">
-
-														</div>
-														<div id="projetov" class="col-md-9 projetov">
-														</div>
-														<input type="hidden" name="txt_codprojeto" id="txt_codprojeto">														
-													</div>
-													
-													
-													
-													
-													<div class="form-group row">
-														<div class="col-md-9" style="display: none;">
-															<label for="txt_acao">Ação<span
-																	class="Obrigatorio"><strong>*</strong></span>:</label>
-															<input type="zoom" class="form-control" id="txt_acao"
-																name="txt_acao" data-zoom="{
-																			'displayKey':'NOME',
-																			'datasetId':'dsacao',
-																			'maximumSelectionLength':'1',
-																			'placeholder':'Escolha a aÃ§Ã£o',
-																			'fields':[
-																			{
-																				'field':'CODCCUSTO',
-																				'label':'CODIGO',
-																				'search':'true'
-																				
-																			},{
-																					'field':'NOME',
-																					'label':'NOME',
-																					'search':'true',
-																					'standard':'true'
-																			}
-																			]
-																			}">
-
-														</div>
-														
-														<div id="acaov" class="col-md-9 acaov"></div>
-														
-														<input type="hidden" name="txt_codacao" id="txt_codacao">
-																											
-													</div>
-													
-													<div class="form-group row">
-														<div class="col-md-9" style="display: none;">
-															<label for="txt_recursos">Unidade<span
-																	class="Obrigatorio"><strong>*</strong></span>:</label>
-															<input type="zoom" class="form-control" id="txt_recursos"
-																name="txt_recursos" data-zoom="{
-																			'displayKey':'NOME',
-																			'datasetId':'dsunidade',
-																			'maximumSelectionLength':'1',
-																			'placeholder':'Escolha a unidade',
-																			'fields':[
-																			{
-																				'field':'CODCCUSTO',
-																				'label':'CODIGO'
-																			},{
-																					'field':'NOME',
-																					'label':'NOME',
-																					'standard':'true'
-																			}
-																			]
-																			}">
-
-														</div>
-														
-														<div id="unidadev" class="col-md-9 unidadev">
-														</div>
-														
-														<input type="hidden" name="txt_codrecurso" id="txt_codrecurso">
-													</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+			<div class="panel-body">
+				<div class="form-group row">
+					<div class="col-md-8">
+						<div style="display: none;">
+								<label class="control-label" for="txt_projeto">Projeto:</label>
+								<span class="required text-danger"><strong>*</strong></span>
+								<input 
+									type="zoom"
+									class="form-control"
+									id="txt_projeto"
+									name="txt_projeto"
+									data-zoom="{
+										'displayKey':'NOME',
+										'datasetId':'dsprojeto',
+										'maximumSelectionLength':'1',
+										'placeholder':'Escolha o projeto',
+										'fields':[
+											{   'field':'CODCCUSTO', 
+												'label':'CODCCUSTO' 
+											},
+											{   'field':'NOME', 
+												'label':'NOME', 
+												'standard':'true' 
+											}
+										]
+									}"
+								>
+								<input type="hidden" name="txt_codprojeto" id="txt_codprojeto">
+								</div>
+								<div id="projetov" style="display: d;"></div> 
+								</div>
+								<div class="col-md-8">
+									<div style="display: none;">
+									<label class="control-label" for="txt_acao">Ação:</label>
+									<span class="required text-danger"><strong>*</strong></span>
+									<input 
+										type="zoom"
+										class="form-control"
+										id="txt_acao"
+										name="txt_acao"
+										data-zoom="{
+											'displayKey':'NOME',
+											'datasetId':'dsacao',
+											'maximumSelectionLength':'1',
+											'placeholder':'Escolha a ação',
+											'fields':[
+												{   'field':'CODACAO', 'label':'CODACAO' },
+												{ 'field':'NOME', 'label':'NOME', 'standard':'true' }
+											]
+										}"
+									>
+									<input type="hidden" name="txt_codacao" id="txt_codacao">
+								</div>
+								<div id="acaov" style="display: d;"></div>
+							</div>
+					
+							<div class="col-md-8">
+								<div style="display: none;">
+								<label class="control-label" for="txt_recursos">Unidade:</label>
+								<span class="required text-danger"><strong>*</strong></span>
+								<input 
+									type="zoom"
+									class="form-control"
+									id="txt_recursos"
+									name="txt_recursos"
+									data-zoom="{
+										'displayKey':'NOME',
+										'datasetId':'dsunidade',
+										'maximumSelectionLength':'1',
+										'placeholder':'Escolha o recurso',
+										'fields':[ 
+											{ 'field':'CODUNIDADE', 'label':'CODUNIDADE' },
+											{ 'field':'NOME', 'label':'NOME', 'standard':'true' }
+										]
+									}"
+								></div>
+								<div id="unidadev" style="display: d;"></div>
+							</div>
+					</div>  
 				</div>
 			</div>
 			
@@ -517,6 +477,11 @@
 </div>
 </body>
 	
+	<script src="custom.js"></script>
+	<script src="custom2.js"></script>
+	<script src="dtc.js"></script>
+	
+	
 	<script>function atualizarDataHoraAtual() {
             const dataHoraAtual = new Date();
             const formatoDataHora = dataHoraAtual.toLocaleString();
@@ -524,8 +489,7 @@
         }
         atualizarDataHoraAtual();</script>
 	
-	<script src="custom.js"></script>
-	<script src="dtc.js"></script>
+	
 
 	<link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide-ratingstars.min.css">
 	<script type="text/javascript">
