@@ -42,10 +42,10 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addRow(new Array("NFCe - NFSe", "RM", "3"));
     dataset.addRow(new Array("Orientação para Uso", "My Web", "1"));
     dataset.addRow(new Array("Permissão de Acesso", "My Web", "1"));
-    dataset.addRow(new Array("Relatório Administrativo", "My Web", "3"));
     dataset.addRow(new Array("Parâmetros", "RM", "1"));
     dataset.addRow(new Array("Permissão em Módulo", "RM", "1"));
     dataset.addRow(new Array("Portaria de Substituição", "RM", "1"));
+    dataset.addRow(new Array("Relatório Administrativo", "My Web", "3"));
     dataset.addRow(new Array("Recuperação de Arquivo", "Suporte Geral", "2"));
     dataset.addRow(new Array("Relatórios - Extração de Dados", "RM", "2"));
     dataset.addRow(new Array("Reserva Sala 06", "Suporte Geral", "2"));
